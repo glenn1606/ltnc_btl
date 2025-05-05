@@ -18,7 +18,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     srand(time(0));
     score = 0;
 
-    // TẠO BACKGROUND
+   
 
     SDL_Rect background_layer1_images[BACKGROUND_FRAMES];
     SDL_Rect background_layer2_images[BACKGROUND_FRAMES];
@@ -48,7 +48,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     }
     int background_count = 0;
 
-    // NHẠC NỀN VÀ HIỆU ỨNG ÂM THANH
+   
 
     Mix_PlayMusic(music, -1);
 
@@ -73,7 +73,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
         cout << "Unable to load game over sound " << Mix_GetError();
     }
 
-    // CHỮ TRONG GAME
+   
 
     stringstream currentScoreText, shieldRecoveryText, ultiRecoveryText;
 
@@ -93,7 +93,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     ultiRecoveryTextRect.y = 40;
     ultiRecoveryTextRect.h = 20;
 
-    // TRÁI ĐẤT
+    
 
     SDL_Rect earth_images[EARTH_FRAMES];
     SDL_Texture* earth_series = loadTexture("earths.png", renderer);
@@ -111,7 +111,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     earth_position.w = EARTH_SIZE;
     earth_position.h = EARTH_SIZE;
 
-    // TÀU VŨ TRỤ
+   
 
     Spaceship ship;
     ship._size = 30;
@@ -128,7 +128,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     health_lost.h = 5;
     health_lost.w = ship._size;
 
-    // THIÊN THẠCH
+   
 
     int earth_count = 0, asteroid_time = 0, asteroid_limited_count = 325;
 
@@ -136,7 +136,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     Asteroid asteroid;
     asteroid.image = loadTexture("Asteroid_Base.png", renderer);
 
-    // LAZE
+   
 
     vector<Laser> laserGroup;
     Laser laser;
@@ -146,7 +146,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     Uint32 last_shot = 0;
     Uint32 laser_recovery_time = 650;
 
-    // HIỆU ỨNG NỔ
+  
 
     SDL_Rect explosion[EXPLOSION_FRAMES];
     SDL_Texture* explosion_series = loadTexture("Asteroid_Explode.png", renderer);
@@ -161,20 +161,20 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     vector<SDL_Rect> collisionGroup;
     vector<int> collisionTime;
 
-    // CẢNH BÁO VỊ TRÍ THIÊN THẠCH
+  
 
     vector<Warning> warningGroup;
     Warning warning;
     SDL_Texture* appearance[2] = {loadTexture("warning.png", renderer), NULL};
 
-    // CHIÊU THỨC ĐẶC BIỆT
+    
 
     vector<Ultimate> ultimateGroup;
     Ultimate ulti;
     ulti.image = loadTexture("ulti.png", renderer);
     Uint32 last_ulti = SDL_GetTicks(), ulti_time;
 
-    // KHIÊN
+  
 
     SDL_Rect shield_images[SHIELD_FRAMES];
     SDL_Texture* shield_series = loadTexture("shield.png", renderer);
@@ -194,7 +194,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
     Uint32 last_shield = SDL_GetTicks();
     Uint32 shield_time;
 
-    // KẺ ĐỊCH VÀ ĐẠN
+   
 
     vector<Enemy> enemyGroup;
     Enemy enemy;
@@ -216,7 +216,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
             SDL_Delay(1);
             SDL_RenderClear(renderer);
 
-            // VẼ BACKGROUND
+           
 
             SDL_RenderCopy(renderer, background_layer1, &background_layer1_images[background_count/5], NULL);
             SDL_RenderCopy(renderer, background_layer2, &background_layer2_images[background_count/5], NULL);
@@ -224,7 +224,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
 
             SDL_RenderCopy(renderer, earth_series, &earth_images[earth_count/5], &earth_position);
 
-            // VẼ THANH MÁU CỦA TÀU
+          
 
             health_remain.x = ship.x;
             health_remain.y = ship.y - 10;
@@ -236,13 +236,13 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
             SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
             SDL_RenderFillRect(renderer, &health_remain);
 
-            // VẼ TÀU
+         
 
             ship.render(renderer);
             shield_position.x = ship.x - 15;
             shield_position.y = ship.y - 15;
 
-            // CÁC TRẠNG THÁI VÀ THÔNG SỐ CỦA KHIÊN
+            
 
             shield_time = (SHIELD_RECOVERY_TIME - (SDL_GetTicks() - last_shield))/1000;
             if (SDL_GetTicks() - last_shield >= SHIELD_RECOVERY_TIME) shield_time = 0;
@@ -255,7 +255,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 shield_on = 0;
             }
 
-            // KHỞI TẠO VỊ TRÍ RANDOM CHO THIÊN THẠCH VÀ KẺ ĐỊCH
+            
 
             int asteroid_start_position[4][2] = {{-(SCREEN_WIDTH - ASTEROID_SIZE), rand()%(SCREEN_HEIGHT - ASTEROID_SIZE)},
                                   {SCREEN_WIDTH - ASTEROID_SIZE, rand() % (2*SCREEN_HEIGHT - ASTEROID_SIZE)},
@@ -352,7 +352,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
 
             }
 
-            // VẼ KẺ ĐỊCH VÀ ĐẠN CỦA CHÚNG
+           
 
             for (int i = 0; i < enemyGroup.size(); i++){
 
@@ -371,7 +371,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 }
             }
 
-            // VẼ ĐẠN KẺ ĐỊCH CHUYỂN ĐỘNG
+           
 
             for (int j = 0; j < enemyBulletGroup.size(); j++){
                 enemyBulletGroup[j].image = laser_images[laser_count/10];
@@ -380,14 +380,14 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
 
             }
 
-            // VẼ THIÊN THẠCH CHUYỂN ĐỘNG
+           
 
             for (int i = 0; i < asteroidGroup.size(); i++){
                 asteroidGroup[i].render(renderer);
                 asteroidGroup[i].move();
             }
 
-            // VẼ CẢNH BÁO CHUYỂN ĐỘNG
+            
 
             for (int i = 0; i < warningGroup.size(); i++){
                 warningGroup[i].image = appearance[0];
@@ -398,7 +398,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 warningGroup[i].move();
             }
 
-            // VẼ CHIÊU THỨC ĐẶC BIỆT
+            
 
             for (int i = 0; i < ultimateGroup.size(); i++){
                 ultimateGroup[i].render(renderer);
@@ -408,7 +408,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 }
             }
 
-            // VA CHẠM GIỮA ĐẠN KẺ ĐỊCH VÀ TÀU / KHIÊN
+           
 
             for (int i = 0; i < enemyBulletGroup.size(); i++){
                 if (collision(enemyBulletGroup[i], shield_position.x + shield_position.w/2, shield_position.y + shield_position.w/2, shield_position.w/2) && shield_on)
@@ -429,7 +429,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 }
             }
 
-            // VA CHẠM GIỮA THIÊN THẠCH VỚI TÀU / TRÁI ĐẤT
+            
 
             for (int i = 0; i < asteroidGroup.size(); i++){
                 if (collision(asteroidGroup[i], earth_position.x + EARTH_SIZE/2, earth_position.y + EARTH_SIZE/2, EARTH_SIZE/2 - 10) ||
@@ -452,7 +452,6 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                         game_over = 1;
                     }
 
-                    // HIỆU ỨNG NỔ
 
                     SDL_Rect collision_posision;
                     collision_posision.x = asteroidGroup[i].x - 10;
@@ -468,7 +467,6 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 }
             }
 
-            // VẼ LASER CHUYỂN ĐỘNG
 
             for (int i = 0; i < laserGroup.size(); i++){
                 laserGroup[i].render(renderer);
@@ -481,7 +479,6 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 }
             }
 
-            // VA CHẠM GIỮA LASER VÀ THIÊN THẠCH
 
             for (int i = 0; i < laserGroup.size(); i++){
                 for (int j = 0; j < asteroidGroup.size(); j++){
@@ -489,7 +486,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                         Mix_PlayChannel(-1, explosion_sound, 0);
                         score++;
 
-                        // TẦN SUẤT THIÊN THẠCH XUẤT HIỆN VÀ TỐC ĐỘ BẮN LASER TĂNG DẦN
+                        
 
                         if (score > 0 && score % 5 == 0 && asteroid_limited_count > 75){
                             asteroid_limited_count -= 50;
@@ -497,7 +494,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                         }
                         laserGroup.erase(laserGroup.begin() + i);
 
-                        // HIỆU ỨNG NỔ
+                       
 
                         SDL_Rect collision_posision;
                         collision_posision.x = asteroidGroup[j].x - 10;
@@ -514,7 +511,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 }
             }
 
-            // VA CHẠM GIỮA CHIÊU THỨC ĐẶC BIỆT VÀ THIÊN THẠCH
+          
 
             for (int i = 0; i < ultimateGroup.size(); i++){
                 for (int j = 0; j < asteroidGroup.size(); j++){
@@ -522,14 +519,14 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                         Mix_PlayChannel(-1, explosion_sound, 0);
                         score++;
 
-                        // TẦN SUẤT THIÊN THẠCH XUẤT HIỆN VÀ TỐC ĐỘ BẮN LASER TĂNG DẦN
+                       
 
                         if (score > 0 && score % 5 == 0 && asteroid_limited_count > 75){
                             asteroid_limited_count -= 50;
                             laser_recovery_time -= 50;
                         }
 
-                        // HIỆU ỨNG NỔ
+                       
 
                         SDL_Rect collision_posision;
                         collision_posision.x = asteroidGroup[j].x - 10;
@@ -547,7 +544,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
 
             }
 
-            // VẼ HIỆU ỨNG NỔ
+           
 
             for (int i = 0; i < collisionGroup.size(); i++){
                 SDL_RenderCopy(renderer, explosion_series, &explosion[collisionTime[i]/10], &collisionGroup[i]);
@@ -557,7 +554,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                 }
             }
 
-            // ĐIỂM SỐ HIỆN TẠI
+           
 
             currentScoreText.str( "" );
             currentScoreText << "Score : " << score;
@@ -569,7 +566,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
             SDL_RenderCopy(renderer, currentScoreTextTexture, NULL, &currentScoreTextRect);
             SDL_DestroyTexture(currentScoreTextTexture);
 
-            // THỜI GIAN HỒI KHIÊN
+           
 
             shieldRecoveryText.str( "" );
             if (shield_time > 0 && shield_time < 10) {
@@ -590,7 +587,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
             SDL_RenderCopy(renderer, shieldRecoveryTextTexture, NULL, &shieldRecoveryTextRect);
             SDL_DestroyTexture(shieldRecoveryTextTexture);
 
-            // THỜI GIAN HỒI CHIÊU THỨC ĐẶC BIỆT
+           
 
             ulti_time = (ULTI_RECOVERY_TIME - (SDL_GetTicks() - last_ulti))/1000;
             if (SDL_GetTicks() - last_ulti >= ULTI_RECOVERY_TIME) ulti_time = 0;
@@ -647,7 +644,6 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
 
                         case SDLK_ESCAPE: break;
 
-                        // BẮN ĐẠN
 
                         case SDLK_SPACE:
 
@@ -665,7 +661,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
 
                             break;
 
-                        // DÙNG CHIÊU THỨC ĐẶC BIỆT
+                 
 
                         case SDLK_c:
 
@@ -678,7 +674,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                             }
                             break;
 
-                        // DÙNG KHIÊN
+                      
 
                         case SDLK_x:
 
@@ -693,7 +689,7 @@ void game(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font, Mix_Music*
                     }
                 }
 
-                // CỐ ĐỊNH QUỸ ĐẠO CHUYỂN ĐỘNG CỦA TÀU
+               
 
                 if (e.type == SDL_MOUSEMOTION){
                     SDL_GetMouseState(&ship.x, &ship.y);

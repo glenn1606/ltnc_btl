@@ -1,0 +1,130 @@
+# depslib dependency file v1.0
+1683038266 source:d:\ha\uet\btl_ltnc\game.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+	"params.h"
+	"objects.h"
+	"collisions.h"
+	"utils.h"
+	"game.h"
+
+1683107254 d:\ha\uet\btl_ltnc\params.h
+
+1683036972 d:\ha\uet\btl_ltnc\objects.h
+	<SDL.h>
+	<SDL_image.h>
+	"params.h"
+
+1681651802 d:\ha\uet\btl_ltnc\collisions.h
+	"SDL.h"
+	"objects.h"
+
+1681651999 d:\ha\uet\btl_ltnc\utils.h
+	<SDL.h>
+	<SDL_ttf.h>
+
+1683107132 source:d:\ha\uet\btl_ltnc\main.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	"params.h"
+	"objects.h"
+	"collisions.h"
+	"game.h"
+	"utils.h"
+	<SDL_mixer.h>
+
+1681652124 d:\ha\uet\btl_ltnc\game.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+	"params.h"
+	"objects.h"
+	"collisions.h"
+	"utils.h"
+
+1681651202 source:d:\ha\uet\btl_ltnc\objects.cpp
+
+1681651666 source:d:\ha\uet\btl_ltnc\collisions.cpp
+	<bits/stdc++.h>
+	"collisions.h"
+
+1681652046 source:d:\ha\uet\btl_ltnc\utils.cpp
+	<bits/stdc++.h>
+	"utils.h"
+	"params.h"
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+
+1682688622 d:\ha\uet\btl_ltnc\game.h
+	<SDL.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+
+1746301346 source:c:\users\admin\downloads\earthdefender\btl_ltnc-main\collisions.cpp
+	<bits/stdc++.h>
+	"collisions.h"
+
+1746301346 c:\users\admin\downloads\earthdefender\btl_ltnc-main\collisions.h
+	"SDL.h"
+	"objects.h"
+
+1746301346 c:\users\admin\downloads\earthdefender\btl_ltnc-main\objects.h
+	<SDL.h>
+	<SDL_image.h>
+	"params.h"
+
+1746301346 c:\users\admin\downloads\earthdefender\btl_ltnc-main\params.h
+
+1746301346 source:c:\users\admin\downloads\earthdefender\btl_ltnc-main\game.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+	"params.h"
+	"objects.h"
+	"collisions.h"
+	"utils.h"
+	"game.h"
+
+1746301347 c:\users\admin\downloads\earthdefender\btl_ltnc-main\utils.h
+	<SDL.h>
+	<SDL_ttf.h>
+
+1746301346 c:\users\admin\downloads\earthdefender\btl_ltnc-main\game.h
+	<SDL.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+
+1746301346 source:c:\users\admin\downloads\earthdefender\btl_ltnc-main\main.cpp
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	"params.h"
+	"objects.h"
+	"collisions.h"
+	"game.h"
+	"utils.h"
+	<SDL_mixer.h>
+
+1746301346 source:c:\users\admin\downloads\earthdefender\btl_ltnc-main\objects.cpp
+
+1746301347 source:c:\users\admin\downloads\earthdefender\btl_ltnc-main\utils.cpp
+	<bits/stdc++.h>
+	"utils.h"
+	"params.h"
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+

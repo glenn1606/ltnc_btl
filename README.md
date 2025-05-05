@@ -1,5 +1,9 @@
 # 🛰️ BTL_LTNC: EARTH DEFENDER
 
+- Họ và tên : Dương Hoàng Anh
+- MSV : 24022762
+
+
 **Earth Defender** là một game bắn súng không gian 2D sử dụng thư viện SDL2,điều khiển một tàu vũ trụ để bảo vệ Trái Đất khỏi các đợt tấn công liên tiếp của thiên thạch và kẻ địch.
 ---
 

@@ -47,3 +47,19 @@
 ```bash
 g++ -o EarthDefender main.cpp game.cpp collisions.cpp utils.cpp -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 ./EarthDefender
+
+``` 
+###  Mục tiêu hướng đến: 9 điểm
+✅ Tự xây dựng toàn bộ game từ đầu bằng SDL2
+
+✅ Áp dụng các kỹ thuật ngoài nội dung môn học: va chạm hình tròn, hệ thống cooldown, animation theo frame,...
+
+✅ Sử dụng nhiều thư viện SDL mở rộng
+
+✅ Tổ chức mã rõ ràng, phân chia hợp lý theo module
+
+✅ Phát triển nhiều tính năng: âm thanh, nhạc nền, animation, điều khiển chuột
+
+✅ Tăng độ khó theo điểm, hệ thống kỹ năng, máu, điểm
+
+✅ Không tập trung vào đồ họa đẹp hay ý tưởng kịch bản, đúng yêu cầu kỹ thuật của đề tài
